@@ -1,27 +1,25 @@
 import multiprocessing as mp
-from flask import Flask, jsonify, make_response, request
+from flask import Flask, jsonify, make_response, request, render_template
 import hashlib
+
+import socketio
+import eventlet
+import eventlet.wsgi
+
 import socket
+
+sio = socketio.Server()
 app = Flask(__name__)
-
-
-
-
 
 orders={}
 
-
 q = mp.Queue()
-
-
-
 
 def foo():
     app.run(debug=True, host='0.0.0.0')
 
 
-
-
+# Validation
 def ValidOrder(podact_id,prodact_name,let,lot):
 
         if (( (let>0) and (lot>0))):
@@ -30,11 +28,11 @@ def ValidOrder(podact_id,prodact_name,let,lot):
             return False
 
 
-
-
-
 # Routes
-
+@app.route('/')
+def index():
+    """Serve the client-side application."""
+    return render_template('index.html')
 
 @app.route('/test', methods=['GET'])
 def hello_world():
@@ -67,6 +65,8 @@ def not_found(error):
 def not_found(error):
     return make_response(jsonify({'error': 'Request method not allowed.'}), 405)
 
+
+# Main process
 if __name__ == '__main__':
     #app.run(debug=True, host='0.0.0.0')
     #mp.set_start_method('spawn')

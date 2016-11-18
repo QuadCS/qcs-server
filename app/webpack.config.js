@@ -2,8 +2,8 @@ module.exports = {
   // entry file
   entry: './index.js',
   output: {
-    path: __dirname + '/build',
-    publicPath: '/build/',
+    path: __dirname + '/../server/static',
+    publicPath: '/static/',
     filename: 'bundle.js'
   },
   // we will use webpack-dev-server

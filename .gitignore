@@ -93,4 +93,4 @@ ENV/
 # App stuff
 
 app/node_modules/
-app/build/*
+server/static/*
