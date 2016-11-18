@@ -89,3 +89,8 @@ ENV/
 .ropeproject
 
 .idea/
+
+# App stuff
+
+app/node_modules/
+app/build/*
