@@ -1,0 +1,17 @@
+.app p {
+    color: blue;
+}
+
+.container {
+    background-color: coral;
+    flex: 1;
+    flex-direction: row;
+}
+
+.orders {
+    flex: 1;
+}
+
+.quadcopters {
+    flex: 1;
+}

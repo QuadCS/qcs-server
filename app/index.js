@@ -1,7 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
- 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+import App from './App';
+
+const Main = () => (
+  <MuiThemeProvider>
+    <App />
+  </MuiThemeProvider>
+);
+
 ReactDOM.render(
-  <h1>Hello World!</h1>,
+  <Main />,
   document.getElementById('app')
 );
